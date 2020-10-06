@@ -1,5 +1,7 @@
 {
   "name": "ControlEEG",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

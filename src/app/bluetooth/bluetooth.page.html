@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Dispositivos bluetooth</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let disp of listaDisp">
+    <ion-button (click)="conectar(disp.address)" expand="block" fill="clear" shape="round" [routerLink]="['/home']">
+      {{disp.name}}
+    </ion-button>
+  </div>
+</ion-content>
