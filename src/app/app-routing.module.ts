@@ -15,6 +15,18 @@ const routes: Routes = [
     path: 'bluetooth',
     loadChildren: () => import('./bluetooth/bluetooth.module').then( m => m.BluetoothPageModule)
   },
+  {
+    path: 'registro-eeg',
+    loadChildren: () => import('./registro-eeg/registro-eeg.module').then( m => m.RegistroEEGPageModule)
+  },
+  {
+    path: 'registro-usuario',
+    loadChildren: () => import('./registro-usuario/registro-usuario.module').then( m => m.RegistroUsuarioPageModule)
+  },
+  {
+    path: 'calibracion',
+    loadChildren: () => import('./calibracion/calibracion.module').then( m => m.CalibracionPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BluetoothSerial } from '@ionic-native/bluetooth-serial/ngx';
 import { AlertController, ToastController } from '@ionic/angular';
+import { DeviceEEG } from '../model/DeviceEEG';
+import { BluetoothService } from '../services/bluetooth.service';
 
 @Component({
   selector: 'app-bluetooth',
@@ -9,13 +11,13 @@ import { AlertController, ToastController } from '@ionic/angular';
 })
 export class BluetoothPage implements OnInit {
 
-  constructor(public alertCtrl: AlertController, public toastCtrl: ToastController, private bth: BluetoothSerial) { }
+  constructor(public alertCtrl: AlertController, public toastCtrl: ToastController, private servBth: BluetoothService) { }
 
   public listaDisp = [];
 
   public async ngOnInit() {
     try {
-      await this.bth.isEnabled();
+      await this.servBth.isEnabled();
       this.presentToast("Bluetooth habilitado");
       this.listaDispositivos();
     } catch (e) {
@@ -24,12 +26,11 @@ export class BluetoothPage implements OnInit {
   }
 
   public async listaDispositivos() {
-    this.listaDisp = await this.bth.list();
+    this.listaDisp = await this.servBth.list();
   }
 
   public conectar(address) {
-    this.bth.connect(address).subscribe(resp => {
-      this.bth.write("Hola Mundo!");
+    this.servBth.connect(address).subscribe(resp => {
       this.presentToast("Conexion exitosa");
     }, error => {
         alert(error);
@@ -37,7 +38,7 @@ export class BluetoothPage implements OnInit {
   }
 
   public desconectar() {
-    this.bth.disconnect();
+    this.servBth.disconnect();
   }
 
   async presentToast(msj) {
@@ -55,7 +56,6 @@ export class BluetoothPage implements OnInit {
       message: msj,
       buttons: ['OK']
     });
-
     await alert.present();
   }
 }

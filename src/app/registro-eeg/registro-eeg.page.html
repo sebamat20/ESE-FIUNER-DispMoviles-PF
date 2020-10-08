@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registrar EEG</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button color="success" expand="block" shape="round" [disabled]="conectado==0" (click)="startEEG()">
+    <ion-icon slot="start" name="play-circle-outline"></ion-icon>
+    Comenzar Medicion
+  </ion-button>
+  <ion-button color="danger" expand="block" shape="round" [disabled]="conectado==0" (click)="stopEEG()">
+    <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
+    Parar Medicion
+  </ion-button>
+</ion-content>

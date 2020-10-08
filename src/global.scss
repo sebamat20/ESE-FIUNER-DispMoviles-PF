@@ -24,3 +24,13 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+/* Set variables for all modes */
+:root {
+    /* Set the background of the entire app */
+    --ion-background-color: #02153f83;
+  }
+  /* Set text color of the entire app for Material Design only */
+  .md {
+    --ion-text-color: rgb(255, 255, 255);
+  }

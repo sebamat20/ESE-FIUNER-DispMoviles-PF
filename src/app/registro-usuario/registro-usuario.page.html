@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Datos de usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Nombre del profesional <ion-text color="danger">*</ion-text></ion-label>
+    <ion-input [(ngModel)]="profesional" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Nombre del paciente <ion-text color="danger">*</ion-text></ion-label>
+    <ion-input [(ngModel)]="paciente" type="password" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-radio-group [(ngModel)]="sexo">
+      <ion-label position="inline"> Tipo de estudio</ion-label>
+      <ion-item>
+        <ion-label > Registro</ion-label>
+        <ion-radio slot="start" value="r" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label > Calibracion</ion-label>
+        <ion-radio color="danger" slot="start" value="c"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-item>
+  <ion-button (click)="guardar()" color= "warning" [routerLink]="['/home']"> Guardar</ion-button>
+</ion-content>

@@ -25,3 +25,24 @@
 #container a {
   text-decoration: none;
 }
+
+:host {
+  ion-header ion-toolbar::shadow {
+		--background: rgb(2, 47, 53);
+	}
+  ion-content.background {
+    --background: url(../../assets/background2.png) no-repeat center center / cover;
+  }
+}
+
+.botonRegistrar {
+  position: fixed;
+  bottom: 100px;
+  width: 100%;
+}
+
+.botonCalib {
+  position: fixed;
+  bottom: 50px;
+  width: 100%;
+}

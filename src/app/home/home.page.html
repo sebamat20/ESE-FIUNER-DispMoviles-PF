@@ -3,7 +3,7 @@
     <ion-title color="primary">
       Control EEG
     </ion-title>
-    <ion-button color="secondary" slot="end" (click)="agregarRegistro()">
+    <ion-button color="secondary" slot="end" [routerLink]="['/registro-usuario']">
       <ion-icon name="person-add-outline"></ion-icon>
       Registro
     </ion-button>
@@ -13,13 +13,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-button color="success" expand="block" shape="round" [disabled]="conectado==0" (click)="startEEG()">
-    <ion-icon slot="start" name="play-circle-outline"></ion-icon>
-    Comenzar Medicion
+<ion-content class="background" no-scroll padding>
+  <ion-button class="botonRegistrar" color="primary" expand="block" shape="round" [disabled]="conectado==0" [routerLink]="['/registro-eeg']">
+    Registrar EEG
   </ion-button>
-  <ion-button color="danger" expand="block" shape="round" [disabled]="conectado==0" (click)="stopEEG()">
-    <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
-    Parar Medicion
+  <ion-button class="botonCalib" color="primary" expand="block" shape="round" [disabled]="conectado==0" [routerLink]="['/calibracion']">
+    Calibracion
   </ion-button>
 </ion-content>
