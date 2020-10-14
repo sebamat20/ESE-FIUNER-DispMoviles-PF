@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BluetoothSerial } from '@ionic-native/bluetooth-serial/ngx';
 import { AlertController, ToastController } from '@ionic/angular';
-import { DeviceEEG } from '../model/DeviceEEG';
 import { BluetoothService } from '../services/bluetooth.service';
 
 @Component({

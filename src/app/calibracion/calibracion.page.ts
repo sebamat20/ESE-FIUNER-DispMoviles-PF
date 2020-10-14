@@ -15,7 +15,7 @@ export class CalibracionPage implements OnInit {
 
   public async ngOnInit() {
     this.conectado = await this.servBth.isConnected();
-    if (!this.conectado == false) {
+    if (!this.conectado == true) {
       this.mostrarAlerta();
     }
   }

@@ -1,18 +1,15 @@
 import { Injectable } from '@angular/core';
 import { BluetoothSerial } from '@ionic-native/bluetooth-serial/ngx';
-import { DeviceEEG } from '../model/DeviceEEG';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BluetoothService {
 
-  //public EEGdevice: DeviceEEG;
 
-  constructor(private bth: BluetoothSerial) {
-    //this.EEGdevice = new DeviceEEG(bth);
-  }
-  public isConnected() {
+  constructor(private bth: BluetoothSerial) { }
+  
+  public async isConnected() {
     return this.bth.isConnected();
   }
 
